@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .contact-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #2c3e50;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        button {
+            padding: 12px;
+            background: #c0392b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #a93226;
+        }
+        .success {
+            font-size: 18px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Contáctanos</h1>
+        {% if sent %}
+            <p class="success">¡Mensaje enviado! Gracias por contactarnos, !Que tenga un excelente Dia!</p>
+        {% else %}
+            <form method="post">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        {% endif %}
+        <a href="{{ url_for('home') }}">← Volver al inicio</a>
+    </div>
+</body>
+</html>

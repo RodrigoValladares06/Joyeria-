@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Joyería Eleganza</title>
+   <style>
+    body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #d4af37, #f1e1a6);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #222;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 32px;
+    color: #333;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Joyería" class="logo-img">
+        <span>Joyería Eleganza</span>
+    </div>
+    <nav>
+        <a href="{{ url_for('home') }}">Inicio</a>
+        <a href="{{ url_for('catalog') }}">Catálogo</a>
+        <a href="{{ url_for('about') }}">Acerca de</a>
+        <a href="{{ url_for('contact') }}">Contacto</a>
+    </nav>
+</header>
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; {{ year }} Joyería Eleganza - Todos los derechos reservados
+    </footer>
+</body>
+</html>

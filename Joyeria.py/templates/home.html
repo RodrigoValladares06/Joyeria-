@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Joyería - Home</title>
+    <style>
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        color: #2c3e50;
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: #2c3e50;
+        padding: 20px 40px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    header h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #e67e22;
+    }
+
+    /* Hero & About */
+    .hero {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .about-section {
+        background: #fff;
+        padding: 50px 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .about-section h2 {
+        color: #c0392b;
+        margin-bottom: 14px;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .about-section p {
+        max-width: 800px;
+        margin: 0 auto 12px;
+        font-size: 1.05rem;
+        color: #34495e;
+    }
+    .highlight {
+        color: #e67e22;
+        font-weight: 700;
+    }
+
+    /* Product sections */
+    .section-wrap {
+        max-width: 1200px;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+    }
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 6px;
+    }
+    .section-title h2 {
+        font-size: 1.6rem;
+        color: #2c3e50;
+    }
+    .view-all {
+        text-decoration: none;
+        color: #2980b9;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    .view-all:hover {
+        color: #1f5c87;
+    }
+
+    /* Products */
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .product-card {
+        background: #fff;
+        width: 240px;
+        border-radius: 14px;
+        padding: 18px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+    .product-card img {
+    width: 100%;
+    height: 140px;   /* 🔹 Fijo más pequeño */
+    object-fit: contain;  /* 🔹 Mantiene proporción sin cortar */
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #f9f9f9; /* 🔹 Fondo para que se vea uniforme */
+    padding: 10px;   /* 🔹 Margen interno para que no se pegue */
+}
+
+    
+    .product-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+        color: #2c3e50;
+        font-weight: 700;
+    }
+    .product-card p {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+        margin-bottom: 8px;
+    }
+    .btn {
+        display: inline-block;
+        background: #e67e22;
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.3s ease;
+    }
+    .btn:hover {
+        background: #d35400;
+    }
+
+    
+    @media (max-width: 900px) {
+        .product-card { width: 47%; }
+        header { text-align: center; justify-content: center; }
+        nav a { margin: 8px; display: inline-block; }
+    }
+    @media (max-width: 500px) {
+        .product-card { width: 100%; }
+        header { flex-direction: column; gap: 10px; }
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Joyería</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('catalog') }}">Catálogo</a>
+            <a href="{{ url_for('about') }}">Sobre Nosotros</a>
+            <a href="{{ url_for('contact') }}">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <!-- BIOGRAFÍA / INTRO -->
+        <section class="about-section">
+            <h2>Sobre Nosotros</h2>
+            <p>Fundada en <span class="highlight">2010</span>, nuestra joyería mezcla <span class="highlight">tradición artesanal</span> y diseño moderno para crear piezas únicas. Trabajamos con materiales seleccionados como <span class="highlight">plata 925</span> y <span class="highlight">oro 14k</span>, cuidando calidad y sostenibilidad.</p>
+        </section>
+    </main>
+
+    <!-- ANILLOS -->
+    <section class="section-wrap">
+        <div class="section-title">
+            <h2>Anillos</h2>
+            <a class="view-all" href="{{ url_for('catalog') }}?q=anillo">Ver todo</a>
+        </div>
+        <div class="products">
+            {% for product in products if 'anillo' in product.tags %}
+            <div class="product-card">
+                {% if product.slug == 'collar-solsticio' %}
+                    <!-- por si quieres mantener collar en static, pero aquí no debería salir en anillos -->
+                    <img src="{{ url_for('static', filename='collar_solsticio.jpg.webp') }}" alt="{{ product.name }}">
+                {% else %}
+                    {% if product.image and product.image.startswith('http') %}
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+                    {% endif %}
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <a class="btn" href="{{ url_for('product_detail', slug=product.slug) }}">Ver detalle</a>
+            </div>
+            {% else %}
+                <p>No hay anillos por ahora.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- ARETES -->
+    <section class="section-wrap">
+        <div class="section-title">
+            <h2>Aretes</h2>
+            <a class="view-all" href="{{ url_for('catalog') }}?q=aretes">Ver todo</a>
+        </div>
+        <div class="products">
+            {% for product in products if 'aretes' in product.tags %}
+            <div class="product-card">
+                {% if product.slug == 'collar-solsticio' %}
+                    <img src="{{ url_for('static', filename='collar_solsticio.jpg.webp') }}" alt="{{ product.name }}">
+                {% else %}
+                    {% if product.image and product.image.startswith('http') %}
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+                    {% endif %}
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <a class="btn" href="{{ url_for('product_detail', slug=product.slug) }}">Ver detalle</a>
+            </div>
+            {% else %}
+                <p>No hay aretes por ahora.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- COLLARES -->
+    <section class="section-wrap">
+        <div class="section-title">
+            <h2>Collares</h2>
+            <a class="view-all" href="{{ url_for('catalog') }}?q=collar">Ver todo</a>
+        </div>
+        <div class="products">
+            {% for product in products if 'collar' in product.tags %}
+            <div class="product-card">
+                {% if product.slug == 'collar-solsticio' %}
+                    <!-- Mantengo el collar solsticio usando static si quieres -->
+                    <img src="{{ url_for('static', filename='collar_solsticio.jpg') }}" alt="{{ product.name }}">
+                {% else %}
+                    {% if product.image and product.image.startswith('http') %}
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+                    {% endif %}
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <a class="btn" href="{{ url_for('product_detail', slug=product.slug) }}">Ver detalle</a>
+            </div>
+            {% else %}
+                <p>No hay collares por ahora.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div style="max-width:1100px;margin:30px auto;padding:0 20px;text-align:center;">
+        <a class="btn" href="{{ url_for('catalog') }}">Ver catálogo completo</a>
+    </div>
+</body>
+</html>

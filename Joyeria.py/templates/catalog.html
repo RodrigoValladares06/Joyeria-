@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo - Mi Joyería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #f8f9fc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .catalog {
+        padding: 50px 20px;
+    }
+
+    .catalog-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        color: #222;
+        font-weight: 600;
+    }
+
+    .category-title {
+        font-size: 1.8em;
+        margin: 40px 0 20px;
+        color: #333;
+        border-bottom: 2px solid #eee;
+        display: inline-block;
+        padding-bottom: 6px;
+        font-weight: 500;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 30px;
+    }
+
+    .product-card {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .product-card img {
+        max-width: 180px;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .product-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+        color: #111;
+        font-weight: 600;
+    }
+
+    .product-card .price {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .product-card .button {
+        background: linear-gradient(135deg, #ff7e5f, #ff6a00);
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        display: inline-block;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .product-card .button:hover {
+        background: linear-gradient(135deg, #ff6a00, #ff3b1f);
+        transform: translateY(-2px);
+    }
+</style>
+
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Mi Joyería</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/catalog">Catálogo</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1 class="catalog-title">Nuestro Catálogo</h1>
+
+    <!-- Ejemplo de categorías y productos -->
+    <div class="category-section">
+        <h2 class="category-title">Anillos</h2>
+        <div class="product-grid">
+            <div class="product-card">
+               <img src="{{ url_for('static', filename='images/anillo_aurora.jpg') }}" alt="Anillo Aurora">
+                <h3>Anillo Aurora</h3>
+                <p class="price">$129</p>
+                <a class="button" href="#">Ver detalle</a>
+            </div>
+            <div class="product-card">
+               <img src="{{ url_for('static', filename='images/anillo_estrella.jpg') }}" alt="Anillo Estrella">
+                <h3>Anillo Estrella</h3>
+                <p class="price">$99</p>
+                <a class="button" href="#">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">Aretes</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/aretes_luna.jpg') }}" alt="Aretes Luna">
+                <h3>Arete Luna</h3>
+                <p class="price">$59</p>
+                <a class="button" href="#">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">Collares</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/collar_solsticio.jpg') }}" alt="Collar Solsticio">
+                <h3>Collar Solsticio</h3>
+                <p class="price">$199</p>
+                <a class="button" href="#">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Mi Joyería. Todos los derechos reservados.
+</footer>
+</body>
+</html>

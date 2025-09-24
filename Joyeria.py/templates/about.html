@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nosotros - Joyería</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            color: #2c3e50;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 40px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px 30px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #c0392b;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e67e22;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sobre Nosotros</h1>
+    </header>
+
+    <div class="container">
+        <h2>Nuestra Historia</h2>
+        <p>
+            Fundada en <span class="highlight">2010</span>, nuestra joyería nació con la misión de crear 
+            piezas únicas que combinan tradición artesanal y diseño moderno. 
+            Empezamos como un pequeño taller familiar y hoy nos enorgullece 
+            ser una marca reconocida por la calidad y autenticidad de cada pieza.
+        </p>
+
+        <h2>Filosofía</h2>
+        <p>
+            Creemos que cada joya cuenta una historia. Por eso, trabajamos con 
+            <span class="highlight">plata 925, oro 14k y piedras preciosas seleccionadas</span>, 
+            garantizando que cada pieza no solo embellezca, sino que también dure 
+            para toda la vida.
+        </p>
+
+        <h2>Nuestro Compromiso</h2>
+        <p>
+            Estamos comprometidos con la <span class="highlight">sostenibilidad</span> y el 
+            comercio justo, colaborando con artesanos locales y proveedores que 
+            comparten nuestros valores. Cada joya que sale de nuestra tienda refleja 
+            pasión, dedicación y un respeto profundo por el arte de la joyería.
+        </p>
+
+        <a href="{{ url_for('home') }}">← Volver al inicio</a>
+    </div>
+</body>
+</html>

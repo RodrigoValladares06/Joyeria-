@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }} - Joyería</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            padding: 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .product-image img {
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-info h2 {
+            font-size: 28px;
+            margin: 0 0 20px 0;
+        }
+        .product-info p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #444;
+        }
+        .price {
+            font-size: 22px;
+            color: #c0392b;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #c0392b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .buy-button:hover {
+            background: #a93226;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Joyería</h1>
+    </header>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-info">
+            <h2>{{ product.name }}</h2>
+            <p><strong>Material:</strong> {{ product.material }}</p>
+            <p>{{ product.description }}</p>
+            <p class="price">${{ product.price }}</p>
+            <a href="/contact" class="buy-button">Comprar</a>
+        </div>
+    </div>
+</body>
+</html>
